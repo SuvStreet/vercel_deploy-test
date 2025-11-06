@@ -3,6 +3,8 @@ const express = require('express')
 const cors = require('cors')
 const { createClient } = require('@supabase/supabase-js')
 
+console.log('✅ Backend function initialized');
+
 const app = express()
 app.use(cors({ origin: '*', credentials: true }))
 app.use(express.json())
