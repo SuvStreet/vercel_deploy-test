@@ -13,6 +13,11 @@ const supabase = createClient(
   process.env.SUPABASE_SERVICE_ROLE_KEY
 )
 
+// главный роут
+app.get('/', (req, res) => {
+  res.send('✅ Backend is alive')
+})
+
 // простой эндпоинт
 app.get('/posts', async (req, res) => {
   const { data, error } = await supabase.from('posts').select('*')
