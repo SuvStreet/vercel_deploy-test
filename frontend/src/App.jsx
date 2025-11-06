@@ -4,8 +4,8 @@ export default function App() {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    fetch('/api/posts') // проксируется на backend
-      .then(res => res.json())
+    fetch('https://vercel-deploy-test-backend.vercel.app') // проксируется на backend
+      .then((res) => res.text())
       .then(setPosts)
   }, [])
 
@@ -13,9 +13,7 @@ export default function App() {
     <div>
       <h1>Posts from Supabase</h1>
       <ul>
-        {posts.map(p => (
-          <li key={p.id}>{p.title}</li>
-        ))}
+        {posts}
       </ul>
     </div>
   )
